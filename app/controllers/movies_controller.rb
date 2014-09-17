@@ -9,7 +9,11 @@ class MoviesController < ApplicationController
 		@movie = Movie.find_by_id(params[:id])
 	end
 	
-	#%h1= @movie.title
+	#%h1= @movie.title # this is syntex error.
+
+	def new
+		#default
+	end
 end
 
 
