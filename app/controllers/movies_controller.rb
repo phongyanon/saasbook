@@ -29,7 +29,10 @@ class MoviesController < ApplicationController
 		@movie = Movie.find params[:id]
 		@movie.update_attributes!(params[:movie])
 		flash[:notice] = "#{@movie.title} was successfully updated."
-		redirect_to movie_path(@movie)	
+		redirect_to movie_path(@movie)
+		#response_to do |client_wants|
+		#	client_wants.html { redirect_to movie_path(@movie) }
+		#client_wants.xml { render :xml => @movie.to_xml }	
 	end
 
 	def destroy
